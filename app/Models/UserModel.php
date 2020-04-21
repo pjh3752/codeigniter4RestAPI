@@ -17,6 +17,7 @@ class UserModel extends Model
         'email',
         'gender'
     ];
+<<<<<<< HEAD
 
     protected $validationRules = [
         'name'      => 'required|alpha_hangul|max_length[20]',
@@ -29,4 +30,7 @@ class UserModel extends Model
     protected $validationMessages = [];
 
     protected $skipValidation = false;
+=======
+    //protected $validationRules    = [ 'contents'   => 'required'  ]; 
+>>>>>>> 7f73cc8... user 등록, 상세조회, 목록조회 작업완료
 }

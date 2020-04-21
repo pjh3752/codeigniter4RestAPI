@@ -33,6 +33,18 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->resource('users');
+<<<<<<< HEAD
+=======
+$routes->get('users/new',             'Users::new');
+$routes->post('users',                'Users::create');
+$routes->get('users',                 'Users::index');
+$routes->get('users/(:segment)',      'Users::show/$1');
+$routes->get('users/(:segment)/edit', 'Users::edit/$1');
+$routes->put('users/(:segment)',      'Users::update/$1');
+$routes->patch('users/(:segment)',    'Users::update/$1');
+$routes->delete('users/(:segment)',   'Users::delete/$1');
+
+>>>>>>> 7f73cc8... user 등록, 상세조회, 목록조회 작업완료
 
 /**
  * --------------------------------------------------------------------
