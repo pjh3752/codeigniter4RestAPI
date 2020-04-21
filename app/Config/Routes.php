@@ -32,6 +32,17 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->resource('users');
+$routes->get('users/new',             'Users::new');
+$routes->post('users',                'Users::create');
+$routes->get('users',                 'Users::index');
+$routes->get('users/(:segment)',      'Users::show/$1');
+$routes->get('users/(:segment)/edit', 'Users::edit/$1');
+$routes->put('users/(:segment)',      'Users::update/$1');
+$routes->patch('users/(:segment)',    'Users::update/$1');
+$routes->delete('users/(:segment)',   'Users::delete/$1');
+
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
