@@ -62,7 +62,7 @@ class Users extends ResourceController
         // Validate before password is encrypted
         if($this->model->validate($data)){
             // To avoid validation at the model save step
-            $this->model->skipValidation = true;
+            $this->model->skipValidation(true);
             // convert stdClass to array
             $data = json_decode(json_encode($data), true);
             $user = new User();
