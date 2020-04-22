@@ -4,22 +4,37 @@ use CodeIgniter\Entity;
  
 class User extends Entity
 {
+    protected $modelName = 'App\Models\UserModel';
+    
     protected $attributes = [
-        'name' => null,
-        'email' => null,
+        'id'        => null,
+        'name'      => null,
+        'email'     => null,
+        'nickname'  => null,
+        'password'  => null,
+        'phone'     => null,
+        'email'     => null,
+        'gender'    => null
     ];
- 
-    // filter on create/update data if necessary
+
     public function setName(string $name): self
     {
-        $this->attributes['name'] = strtoupper($name);
+        $this->attributes['name'] = $name;
         return $this;
     }
  
-    // filter on create/update data if necessary
     public function setEmail(string $email): self
     {
-        $this->attributes['email'] = ucwords($email);
+        $this->attributes['email'] = $email;
         return $this;
     }
+
+    public function setPassword(string $password): self
+    {
+        // encrypt password
+        $encrypter = service('encrypter');
+        $this->attributes['password'] = base64_encode($encrypter->encrypt($password));
+        return $this;
+    }
+
 }

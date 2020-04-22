@@ -17,5 +17,16 @@ class UserModel extends Model
         'email',
         'gender'
     ];
-    //protected $validationRules    = [ 'contents'   => 'required'  ]; 
+
+    protected $validationRules = [
+        'name'      => 'required|alpha_hangul|max_length[20]',
+        'nickname'  => 'required|alpha_lower|max_length[30]',
+        'password'  => 'required|valid_password|min_length[10]',
+        'phone'     => 'required|numeric|max_length[20]',
+        'email'     => 'required|valid_email|max_length[100]|is_unique[users.email]'
+    ];
+
+    protected $validationMessages = [];
+
+    protected $skipValidation = false;
 }
