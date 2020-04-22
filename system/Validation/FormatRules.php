@@ -397,4 +397,39 @@ class FormatRules
 		return (bool) $date && \DateTime::getLastErrors()['warning_count'] === 0 && \DateTime::getLastErrors()['error_count'] === 0;
 	}
 
+	/**
+	 * Check Lowercase alpha
+	 *
+	 * @param string $str
+	 *
+	 * @return boolean
+	 */
+	public function alpha_lower(string $str = null): bool
+	{
+		return ctype_lower($str);
+	}
+
+	/**
+	 * Check Lowercase alpha
+	 *
+	 * @param string $str
+	 *
+	 * @return boolean
+	 */
+	public function alpha_hangul(string $str = null): bool
+	{
+		return (bool) preg_match('/^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ\\s]+$/i', $str);
+	}
+
+	/**
+	 * Check password Uppercase and lowercase and number and pecial Characters
+	 *
+	 * @param string $str
+	 *
+	 * @return boolean
+	 */
+	public function valid_password(string $str = null): bool
+	{
+		return (bool) preg_match('/^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*([^\w\s]|[_]))/', $str);
+	}
 }
