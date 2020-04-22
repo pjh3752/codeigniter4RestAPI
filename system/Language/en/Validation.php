@@ -25,6 +25,8 @@ return [
 	// Rule Messages
    'alpha'                 => 'The {field} field may only contain alphabetical characters.',
    'alpha_dash'            => 'The {field} field may only contain alphanumeric, underscore, and dash characters.',
+   'alpha_hangul'          => 'The {field} field may only contain alphanumeric or hangul characters.',
+   'alpha_lower'           => 'The {field} field may only contain lowercase alphabetical characters.',
    'alpha_numeric'         => 'The {field} field may only contain alphanumeric characters.',
    'alpha_numeric_punct'   => 'The {field} field may contain only alphanumeric characters, spaces, and  ~ ! # $ % & * - _ + = | : . characters.',
    'alpha_numeric_space'   => 'The {field} field may only contain alphanumeric and space characters.',
@@ -61,7 +63,8 @@ return [
    'valid_ip'              => 'The {field} field must contain a valid IP.',
    'valid_url'             => 'The {field} field must contain a valid URL.',
    'valid_date'            => 'The {field} field must contain a valid date.',
-
+   'valid_password'        => 'The {field} field must contain a valid password.',
+   
 	// Credit Cards
    'valid_cc_num'          => '{field} does not appear to be a valid credit card number.',
 
