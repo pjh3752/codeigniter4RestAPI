@@ -2,6 +2,7 @@
 
 /**
  * Challenge of idus using Codeigiter4 and Mysql
+ * Restfull Controller of Users
  * By : pjh3752
  * https://github.com/pjh3752
 */
@@ -12,7 +13,6 @@ use App\Entities\User;
 /* Users Restfull controller */
 class Users extends ResourceController
 {
-
     protected $modelName = 'App\Models\UserModel';
     protected $format    = 'json';
 
@@ -22,15 +22,14 @@ class Users extends ResourceController
     */
     public function index()
     {
-        $data   = $this->request->getGet();
+        $data           = $this->request->getJson();
         // paging, serch variable
-        $limit          = (int) $data['limit'] ? $data['limit'] : 0;
-        $offset         = (int) $data['offset'] ? $data['offset'] : 0;
+        $limit          = (int) $data -> limit ? $data -> limit : 0;
+        $offset         = (int) $data -> offset ? $data -> offset : 0;
         $offset         = $offset * $limit;
-        $name           = $data['name'];
-        $email          = $data['email'];
+        $name           = $data -> name;
+        $email          = $data -> email;
         $searchArray    = ['name' => $name, 'email' => $email];
-
         return $this->respond($this->model->like($searchArray)->findAll($limit, $offset));
     }
 
@@ -78,7 +77,4 @@ class Users extends ResourceController
         
         return $this->respondCreated($user, 'user created');
     }
-
-    
-
 }

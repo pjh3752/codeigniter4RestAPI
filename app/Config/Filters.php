@@ -10,6 +10,7 @@ class Filters extends BaseConfig
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+		'resource' => \App\Filters\ResourceFilter::class
 	];
 
 	// Always applied before every request
@@ -19,12 +20,16 @@ class Filters extends BaseConfig
 			'csrf' => [
                 'except' =>  [
                     '/users',
-                    '/users/*',
+					'/users/*',
+					'/login',
+					'/logout'
                 ],
-            ],
+			],
+			'resource'
 		],
 		'after'  => [
 			'toolbar',
+			'resource'
 			//'honeypot'
 		],
 	];

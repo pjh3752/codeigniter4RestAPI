@@ -432,4 +432,23 @@ class FormatRules
 	{
 		return (bool) preg_match('/^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*([^\w\s]|[_]))/', $str);
 	}
+
+	/**
+	 * Check password Uppercase and lowercase and number and pecial Characters
+	 *
+	 * @param string $str
+	 *
+	 * @return boolean
+	 */
+	public function valid_gender(string $str = null): bool
+	{
+		if($str === 'M' || $str === 'F')
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

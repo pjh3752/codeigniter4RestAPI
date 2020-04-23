@@ -64,6 +64,7 @@ return [
    'valid_url'             => 'The {field} field must contain a valid URL.',
    'valid_date'            => 'The {field} field must contain a valid date.',
    'valid_password'        => 'The {field} field must contain a valid password.',
+   'valid_gender'          => 'The {field} field must contain a valid gender.',
    
 	// Credit Cards
    'valid_cc_num'          => '{field} does not appear to be a valid credit card number.',

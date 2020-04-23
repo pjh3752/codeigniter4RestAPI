@@ -17,23 +17,10 @@ class User extends Entity
         'gender'    => null
     ];
 
-    public function setName(string $name): self
-    {
-        $this->attributes['name'] = $name;
-        return $this;
-    }
- 
-    public function setEmail(string $email): self
-    {
-        $this->attributes['email'] = $email;
-        return $this;
-    }
-
     public function setPassword(string $password): self
     {
         // encrypt password
-        $encrypter = service('encrypter');
-        $this->attributes['password'] = base64_encode($encrypter->encrypt($password));
+        $this->attributes['password'] = password_hash($password, PASSWORD_BCRYPT);
         return $this;
     }
 
