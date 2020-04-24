@@ -23,4 +23,7 @@ Parameters
      phone     string (required) 사용자 전화번호
      email     string (required) 사용자 이메일 
      gender    string 사용자 성별
+Headers
+     Context-Type: application/json
+     Authorization: Bearer {access_token}
 ```
