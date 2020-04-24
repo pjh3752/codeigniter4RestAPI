@@ -9,6 +9,15 @@ Parameters
     password  string 사용자 암호
 Headers
      Context-Type: application/json
+     
+Response 200
+Header
+    Context-Type: application/json
+Body
+{
+    "access_token" : "token_info"
+}
+
 ```
 
 ## Users
