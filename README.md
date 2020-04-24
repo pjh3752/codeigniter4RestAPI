@@ -1,8 +1,8 @@
 # idus-challenge
 ## idus development challenges
 
-### Users
-```
+## Users
+
 **[GET] /users**
 
 
