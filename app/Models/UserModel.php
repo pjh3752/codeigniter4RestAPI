@@ -17,7 +17,7 @@ class UserModel extends Model
         'email',
         'gender'
     ];
-
+    
     protected $validationRules = [
         'name'      => 'required|alpha_hangul|max_length[20]',
         'nickname'  => 'required|alpha_lower|max_length[30]',

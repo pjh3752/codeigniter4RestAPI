@@ -17,7 +17,7 @@ class User extends Entity
         'gender'    => null
     ];
 
-    public function setPassword(string $password): self
+    public function setPassword(string $password)
     {
         // encrypt password
         $this->attributes['password'] = password_hash($password, PASSWORD_BCRYPT);

@@ -25,11 +25,16 @@ class Filters extends BaseConfig
 					'/logout'
                 ],
 			],
-			'resource'
+			'resource' => [
+				'except' =>  [
+					'/login',
+					'/logout'
+                ],
+			],
 		],
 		'after'  => [
 			'toolbar',
-			'resource'
+			'resource' => [],
 			//'honeypot'
 		],
 	];
