@@ -1,5 +1,15 @@
-# idus-challenge
 ## idus development challenges
+
+## Login
+```
+[POST] /login  회원 로그인(인증)
+
+Parameters
+    email     string 사용자 이메일
+    password  string 사용자 암호
+Headers
+     Context-Type: application/json
+```
 
 ## Users
 ```
