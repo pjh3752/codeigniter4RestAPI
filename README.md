@@ -1,6 +1,6 @@
 ## idus development challenges
 
-## Login
+### Login
 ```
 [POST] /login  회원 로그인(인증)
 
