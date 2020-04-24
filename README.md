@@ -9,3 +9,13 @@ Parameters
     email  string 사용자 이메일로 조회 (Example: test@abc.com)
     limit  int    출력 갯수
     offset int    출력 시작 row
+```
+
+```
+[POST] /users
+Parameters
+     name  string 사용자 이름으로 조회 (Example: juho)   
+    email  string 사용자 이메일로 조회 (Example: test@abc.com)
+    limit  int    출력 갯수
+    offset int    출력 시작 row
+```
