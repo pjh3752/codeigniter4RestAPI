@@ -3,7 +3,7 @@
 
 ## Users
 ```
-[GET] /users
+[GET] /users  여러 회원 목록 조회
 Parameters
     name   string 사용자 이름으로 조회 (Example: juho)   
     email  string 사용자 이메일로 조회 (Example: test@abc.com)
@@ -15,7 +15,16 @@ Headers
 ```
 
 ```
-[POST] /users
+[GET] /users/{id}  단일 회원 상세 정보 조회
+Parameters
+    id int (requrid) 사용자 코드
+Headers
+     Context-Type: application/json
+     Authorization: Bearer {access_token}
+```
+
+```
+[POST] /users 회원 가입
 Parameters
      name      string (required) 사용자 이름
      nickname  string (required) 사용자 별명
