@@ -23,7 +23,7 @@ Body
 ```
 
 ## Users
-**로그인 인증에 성공 후 access_token을 발급받아 사용**
+**로그인 인증 성공 후 access_token을 발급받아 사용**
 ```
 [GET] /users  여러 회원 목록 조회
 
