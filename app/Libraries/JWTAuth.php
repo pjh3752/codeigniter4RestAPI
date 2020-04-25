@@ -24,7 +24,7 @@ Class JWTAuth
     {
         $payload = array(
             "iss"   => $_SERVER['HTTP_HOST'],
-			"iat"   => strtotime("now"),
+            "iat"   => strtotime("now"),
             "exp"   => strtotime("+30 minutes"),
             "id"    => $data->id,
             "email" => $data->email
