@@ -1,4 +1,10 @@
-## idus development challenges
+# idus development challenges
+백패커/아이디어스 개발과제
+
+## 개발환경
+- PHP 7.3
+- MySQL 5.7
+- Codeigniter4
 
 ## Login
 ```
