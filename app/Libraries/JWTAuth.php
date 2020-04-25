@@ -22,13 +22,13 @@ Class JWTAuth
     */
     public function setToken($data)
     {
-        $payload = array(
+        $payload = [
             "iss"   => $_SERVER['HTTP_HOST'],
             "iat"   => strtotime("now"),
             "exp"   => strtotime("+30 minutes"),
             "id"    => $data->id,
             "email" => $data->email
-		);
+        ];
         
         $jwt = JWT::encode($payload, $this->key);
         
