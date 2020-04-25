@@ -19,8 +19,8 @@ class ResourceFilter implements FilterInterface
     public function after(RequestInterface $request, ResponseInterface $response)
     {
         // verify access token
-        $reqToken = $request->getHeader('Authorization');
-        $jwtAuth = new JWTAuth;
+        $reqToken   = $request->getHeader('Authorization');
+        $jwtAuth    = new JWTAuth;
         if(! $jwtAuth->verifyToken($reqToken))
         {
             $messages = [

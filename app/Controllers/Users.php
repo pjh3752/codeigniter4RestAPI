@@ -68,8 +68,8 @@ class Users extends ResourceController
             $user = new User();
             $user->fill($data);
 
+            // Return primaryKey
             $insertID = $this->model->insert($user, true);
-
             if (! $insertID)
             {
                 return $this->fail($this->model->errors());
