@@ -21,20 +21,24 @@ class Filters extends BaseConfig
                 'except' =>  [
                     '/users',
 					'/users/*',
-					'/login',
-					'/logout'
+					'/login'
                 ],
 			],
 			'resource' => [
 				'except' =>  [
-					'/login',
-					'/logout'
+					'/',
+					'/login'
                 ],
 			],
 		],
 		'after'  => [
 			'toolbar',
-			'resource' => [],
+			'resource' => [
+				'except' =>  [
+					'/',
+					'/login'
+                ],
+			],
 			//'honeypot'
 		],
 	];

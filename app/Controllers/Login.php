@@ -34,8 +34,8 @@ class Login extends ResourceController
 
             $messages = [
                 "messages" => "login success",
-                "email" => $data->email
-                "access_token" => $token,
+                "email" => $data->email,
+                "access_token" => $token
             ];
             return $this->respond($messages);
         }

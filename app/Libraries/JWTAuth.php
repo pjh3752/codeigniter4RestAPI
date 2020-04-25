@@ -7,6 +7,7 @@ use App\Libraries\JWT;
 Class JWTAuth
 {
     protected $key = "cf41d3a42d3d5000d32454dac376ba834ab1e4dd75e509e3c000f2b0d3c612dd";
+    private $errors;
 
     /**
      * Get JWT token
@@ -44,15 +45,25 @@ Class JWTAuth
             $tokenArr       = $this->tokenParser($reqToken);
             $tokenType      = $tokenArr[1];
             $token          = $tokenArr[2];
-            $decodeToken    = $this->decodeToken($token);
-            $exp            = $decodeToken->exp;
 
-            if($tokenType === 'Bearer' && $exp > strtotime("now")){
-                return true;
+            if($tokenType === 'Bearer')
+            {
+                $decodeToken = $this->decodeToken($token);
+                if(gettype($decodeToken) === 'object'){
+                    return true;
+                }
+            }
+            else
+            {
+                $this->errors = 'The token type is wrong';
+                return false;
             }
         }
-        
-        return false;
+        else
+        {
+            $this->errors = 'Token is empty';
+            return false;
+        }
     }
 
     /**
@@ -66,9 +77,24 @@ Class JWTAuth
 
     /**
      * Token decode
-     * Adding exception handling 
     */
-    public function decodeToken($token){
-        return JWT::decode($token, $this->key, array('HS256'));
+    public function decodeToken($token)
+    {
+        try
+        {
+            return JWT::decode($token, $this->key, array('HS256'));
+        }
+        catch(\Exception $e)
+        {
+            $this->errors = $e->getMessage();
+        }
+    }
+
+    /**
+     * Error for decodeToken exception
+    */
+    public function errors()
+    {
+        return $this->errors;
     }
 }

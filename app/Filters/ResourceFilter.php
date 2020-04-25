@@ -9,21 +9,26 @@ class ResourceFilter implements FilterInterface
 {
     public function before(RequestInterface $request)
     {
+
+    }
+
+    /**
+     * Filter for token verification
+     * If the token is invalid, a response is set
+    */ 
+    public function after(RequestInterface $request, ResponseInterface $response)
+    {
         // verify access token
         $reqToken = $request->getHeader('Authorization');
-        $cookieToekn = $request->getCookie("access_token");
         $jwtAuth = new JWTAuth;
         if(! $jwtAuth->verifyToken($reqToken))
         {
-            return redirect('login');
+            $messages = [
+                "message" => $jwtAuth->errors()
+            ];
+            //$response->setStatusCode(401);
+            $response->setJson($messages);
         }
-        return $request;
-    }
-
-    //--------------------------------------------------------------------
-
-    public function after(RequestInterface $request, ResponseInterface $response)
-    {
-
+        return $response;
     }
 }

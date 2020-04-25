@@ -5,6 +5,7 @@ namespace App\Libraries;
 use \DomainException;
 use \InvalidArgumentException;
 use \UnexpectedValueException;
+use App\Libraries\ExpiredException;
 use \DateTime;
 
 /**
@@ -105,7 +106,7 @@ class JWT
             // OpenSSL expects an ASN.1 DER sequence for ES256 signatures
             $sig = self::signatureToDER($sig);
         }
-
+        
         if (\is_array($key) || $key instanceof \ArrayAccess) {
             if (isset($header->kid)) {
                 if (!isset($key[$header->kid])) {
@@ -119,13 +120,13 @@ class JWT
 
         // Check the signature
         if (!static::verify("$headb64.$bodyb64", $sig, $key, $header->alg)) {
-            throw new SignatureInvalidException('Signature verification failed');
+            throw new \Exception('Signature verification failed');
         }
 
         // Check the nbf if it is defined. This is the time that the
         // token can actually be used. If it's not yet that time, abort.
         if (isset($payload->nbf) && $payload->nbf > ($timestamp + static::$leeway)) {
-            throw new BeforeValidException(
+            throw new \Exception(
                 'Cannot handle token prior to ' . \date(DateTime::ISO8601, $payload->nbf)
             );
         }
@@ -134,14 +135,13 @@ class JWT
         // using tokens that have been created for later use (and haven't
         // correctly used the nbf claim).
         if (isset($payload->iat) && $payload->iat > ($timestamp + static::$leeway)) {
-            throw new BeforeValidException(
+            throw new \Exception(
                 'Cannot handle token prior to ' . \date(DateTime::ISO8601, $payload->iat)
             );
         }
-
         // Check if this token has expired.
         if (isset($payload->exp) && ($timestamp - static::$leeway) >= $payload->exp) {
-            throw new ExpiredException('Expired token');
+            throw new \Exception('Expired token');
         }
 
         return $payload;

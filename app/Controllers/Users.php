@@ -24,11 +24,11 @@ class Users extends ResourceController
     {
         $data           = $this->request->getJson();
         // paging, serch variable
-        $limit          = (int) $data -> limit ? $data -> limit : 0;
-        $offset         = (int) $data -> offset ? $data -> offset : 0;
+        $limit          = (int) $data->limit ? $data->limit : 0;
+        $offset         = (int) $data->offset ? $data->offset : 0;
         $offset         = $offset * $limit;
-        $name           = $data -> name;
-        $email          = $data -> email;
+        $name           = $data->name;
+        $email          = $data->email;
         $searchArray    = ['name' => $name, 'email' => $email];
         return $this->respond($this->model->like($searchArray)->findAll($limit, $offset));
     }
@@ -58,23 +58,29 @@ class Users extends ResourceController
     public function create()
     {
         $data = $this->request->getJson();
+
         // Validate before password is encrypted
-        if($this->model->validate($data)){
+        if($this->model->cleanRules()->validate($data)){
             // To avoid validation at the model save step
             $this->model->skipValidation(true);
             // convert stdClass to array
             $data = json_decode(json_encode($data), true);
             $user = new User();
             $user->fill($data);
-        
-            if (! $this->model->save($user))
+
+            $insertID = $this->model->insert($user, true);
+
+            if (! $insertID)
             {
                 return $this->fail($this->model->errors());
+            }
+            else
+            {
+                $user->id = $insertID;
             }
         }else{
             return $this->fail($this->model->errors());
         }
-        
         return $this->respondCreated($user, 'user created');
     }
 }
