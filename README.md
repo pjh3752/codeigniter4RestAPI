@@ -24,8 +24,8 @@ JWT 토큰기반 인증방식을 사용한 회원관리 Restful API 구현
 
 Request
 Parameters
-    email     string 사용자 이메일
-    password  string 사용자 암호
+    email     string (requrid) 사용자 이메일
+    password  string (requrid) 사용자 암호
 Headers
      Context-Type: application/json
      
@@ -50,10 +50,10 @@ Body
 
 Request
 Parameters
-    name   string 사용자 이름으로 조회 (Example: 관리자)   
-    email  string 사용자 이메일로 조회 (Example: admin@admin.com)
-    limit  int    출력 갯수
-    offset int    출력 시작 row
+    name   string (optional) 사용자 이름으로 조회 (Example: 관리자)   
+    email  string (optional) 사용자 이메일로 조회 (Example: admin@admin.com)
+    limit  int    (optional) 출력 갯수
+    offset int    (optional) 출력 시작 row
 Headers
      Context-Type: application/json
      Authorization: Bearer {access_token}
