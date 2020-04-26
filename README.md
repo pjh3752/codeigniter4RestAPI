@@ -14,7 +14,7 @@ JWT 토큰기반 인증방식을 사용한 회원관리 Restful API 구현
 <br>
 
 ## Login
->초기 관리자 이메일: admin@admin.com 
+>초기 관리자 이메일: <div style="display: inline">admin@admin.com</div>
 
 >초기 관리자 패스워드: Admin1234!@
 ```
