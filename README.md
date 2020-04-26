@@ -14,7 +14,8 @@ JWT 토큰기반 인증방식을 사용한 회원관리 Restful API 구현
 <br>
 
 ## Login
-**초기 관리자 이메일과 패스워드는 users.sql insert문 주석에 적혀있습니다.**
+**초기 관리자 이메일: admin@admin.com**
+**초기 관리자 패스워드: Admin1234!@**
 ```
 [POST] /login  회원 로그인(인증)
 
