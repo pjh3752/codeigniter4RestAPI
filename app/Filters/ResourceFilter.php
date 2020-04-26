@@ -23,11 +23,11 @@ class ResourceFilter implements FilterInterface
         $jwtAuth    = new JWTAuth;
         if(! $jwtAuth->verifyToken($reqToken))
         {
-            $messages = [
-                "message" => $jwtAuth->errors()
+            $errors = [
+                "messages" => $jwtAuth->errors()
             ];
             //$response->setStatusCode(401);
-            $response->setJson($messages);
+            $response->setJson($errors);
         }
         return $response;
     }
