@@ -8,7 +8,7 @@
 
 ## Login
 **초기 관리자 이메일과 패스워드는 users.sql insert문 주석에 적혀있습니다.**
-```javascript
+```
 [POST] /login  회원 로그인(인증)
 
 Parameters
@@ -21,6 +21,8 @@ Response 200
 Header
     Context-Type: application/json
 Body
+```
+```json
 {
     "messages": "login success",
     "email: "test@abc.com",
