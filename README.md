@@ -50,8 +50,8 @@ Body
 
 Request
 Parameters
-    name   string 사용자 이름으로 조회 (Example: juho)   
-    email  string 사용자 이메일로 조회 (Example: test@abc.com)
+    name   string 사용자 이름으로 조회 (Example: 관리자)   
+    email  string 사용자 이메일로 조회 (Example: admin@admin.com)
     limit  int    출력 갯수
     offset int    출력 시작 row
 Headers
@@ -75,12 +75,12 @@ Headers
 
 Request
 Parameters
-     name      string (required) 사용자 이름
-     nickname  string (required) 사용자 별명
-     password  string (required) 사용자 비밀번호
-     phone     string (required) 사용자 전화번호
-     email     string (required) 사용자 이메일 
-     gender    string (M or F)   사용자 성별 
+     name      string (required) 사용자 이름     [한글, 영문 대소문자만 허용]
+     nickname  string (required) 사용자 별명     [영문 소문자만 허용]
+     password  string (required) 사용자 비밀번호 [영문 대문자, 영문 소문자, 특수 문자, 숫자 각 1개 이상씩 포함]
+     phone     string (required) 사용자 전화번호 [숫자]
+     email     string (required) 사용자 이메일   [이메일 형식]
+     gender    string (optional) 사용자 성별     [M or F]
 Headers
      Context-Type: application/json
      Authorization: Bearer {access_token}
