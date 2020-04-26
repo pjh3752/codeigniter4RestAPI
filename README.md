@@ -1,7 +1,7 @@
 # idus development challenges
-백패커/아이디어스 개발과제
+백패커/아이디어스 PHP 백엔드 개발과제
 
-## 개발환경
+## Stack
 - PHP 7.3
 - MySQL 5.7
 - Codeigniter4
