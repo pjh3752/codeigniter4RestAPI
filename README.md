@@ -77,9 +77,9 @@ Request
 Parameters
      name      string (required) 사용자 이름     [한글, 영문 대소문자만 허용]
      nickname  string (required) 사용자 별명     [영문 소문자만 허용]
-     password  string (required) 사용자 비밀번호 [영문 대문자, 영문 소문자, 특수 문자, 숫자 각 1개 이상씩 포함]
-     phone     string (required) 사용자 전화번호 [숫자]
-     email     string (required) 사용자 이메일   [이메일 형식]
+     password  string (required) 사용자 비밀번호   [영문 대문자, 영문 소문자, 특수 문자, 숫자 각 1개 이상씩 포함]
+     phone     string (required) 사용자 전화번호   [숫자]
+     email     string (required) 사용자 이메일    [이메일 형식]
      gender    string (optional) 사용자 성별     [M or F]
 Headers
      Context-Type: application/json
