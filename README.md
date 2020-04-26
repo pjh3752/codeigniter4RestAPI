@@ -7,8 +7,8 @@ JWT 토큰기반 인증방식을 사용한 회원관리 Restful API 구현
 - Codeigniter4
 
 ## Step
-1. users.sql 실행 (초기 관리자 셋팅을 위해 insert구문까지 등록)
-2. 로그인을 통해 사용자 토큰을 발급받습니다.
+1. users.sql 실행합니다. (초기 관리자 셋팅을 위해 insert구문까지 등록)
+2. 로그인을 통해 사용자 토큰을 발급받습니다. (토큰 만료 시간: 발급 시간 +30분)
 3. 발급된 토큰을 Headers의 Authorization에 등록 후 Users API를 호출합니다.
 <img src="./readme_asset/post_login.PNG" style="float:left"/>
 <br>
