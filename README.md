@@ -1,6 +1,6 @@
 # Users Restful API
 
-<img src="./readme_asset/post_login.PNG" width="35%" height="35%" style="float:left"/>
+<img src="./readme_asset/post_login.PNG" style="float:left"/>
 ## Stack
 - PHP 7.3
 - MySQL 5.7
