@@ -1,6 +1,6 @@
-# idus development challenges
-백패커/아이디어스 PHP 백엔드 개발과제
+# Users Restful API
 
+<img src="./readme_asset/post_login.PNG" width="35%" height="35%" style="float:left"/>
 ## Stack
 - PHP 7.3
 - MySQL 5.7
