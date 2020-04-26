@@ -26,7 +26,7 @@ class ResourceFilter implements FilterInterface
             $errors = [
                 "messages" => $jwtAuth->errors()
             ];
-            //$response->setStatusCode(401);
+            $response->setStatusCode(401);
             $response->setJson($errors);
         }
         return $response;
