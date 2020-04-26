@@ -22,7 +22,7 @@ Header
     Context-Type: application/json
 Body
 ```
-```json
+```javascript
 {
     "messages": "login success",
     "email: "test@abc.com",
