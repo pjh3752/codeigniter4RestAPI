@@ -1,8 +1,7 @@
 # Users Restful API
 JWT 토큰기반 인증방식을 사용한 회원관리 Restful API 구현
-< div  style = " display : inline " > http://example.com </ div >
 
-http://example.com
+http://<span></span>example.com
 ## Stack
 - PHP 7.3
 - MySQL 5.7
