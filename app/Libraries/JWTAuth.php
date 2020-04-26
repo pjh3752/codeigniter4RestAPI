@@ -6,7 +6,7 @@ use App\Libraries\JWT;
 
 Class JWTAuth
 {
-    protected $key = "cf41d3a42d3d5000d32454dac376ba834ab1e4dd75e509e3c000f2b0d3c612dd";
+    private $key = "cf41d3a42d3d5000d32454dac376ba834ab1e4dd75e509e3c000f2b0d3c612dd";
     private $errors;
 
     /**
