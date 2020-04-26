@@ -21,8 +21,6 @@ Response 200
 Header
     Context-Type: application/json
 Body
-```
-```javascript
 {
     "messages": "login success",
     "email: "test@abc.com",
